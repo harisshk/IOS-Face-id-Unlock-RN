@@ -11,11 +11,11 @@ export default class App extends Component {
     };
   }
   componentDidMount() {
-    FingerprintScanner.isSensorAvailable()
-      .then((biometryType) => {
-        this.setState({biometryType});
-      })
-      .catch((error) => console.log('isSensorAvailable error => ', error));
+    // FingerprintScanner.isSensorAvailable()
+    //   .then((biometryType) => {
+    //     this.setState({biometryType});
+    //   })
+    //   .catch((error) => console.log('isSensorAvailable error => ', error));
   }
   
   getMessage=()=>{
@@ -56,7 +56,7 @@ export default class App extends Component {
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
           style={styles.buttonStyle}
-          onPress={this.showAuthenticationDialog()}>
+          onPress={()=>this.showAuthenticationDialog()}>
           <Text style={styles.textStyle}>Authenticate</Text>
         </TouchableOpacity>
         <Text
