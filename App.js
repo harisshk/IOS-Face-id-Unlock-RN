@@ -35,12 +35,14 @@ export default class App extends Component {
     if(biometryType!==null && biometryType!==undefined )
     {
     FingerprintScanner.authenticate({
-      description: this.getMessage()
+      description: this.getMessage(),
+      fallbackEnabled:true
     })
       .then(() => {
         alert("Done")
       })
       .catch((error) => {
+        console.log(error.name==="")
         console.log('Authentication error is => ', error);
       });
     }
